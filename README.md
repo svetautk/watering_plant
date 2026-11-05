@@ -2,7 +2,7 @@
 
 A simple app that keeps track of when to water your houseplants. Built with vanilla JavaScript, without frameworks. This was my first project.
 
-**[Live demo](link)**
+**[Live demo](https://svetautk.github.io/watering_plant/)**
 
 ## Screenshots
 
