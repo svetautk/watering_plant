@@ -1,24 +1,28 @@
-+ сделать значения в форме по дефолту
-+ выбор из предложенных иконок
-+ постараться убрать глобальные переменные
-+ добавить функцию cancel и закрытие формы по нажатию вне модального окна
-+ разобраться с тем, как хранить в local storage
-+ переделать структуру html: старт пейдж и кард бокс динамически создавать через js? наверное лучше проверять есть ли растения, если нет, то вот старт пейдж
-+ реализовать кнопку water now
-+ сделать функцию удаления растения
-+ сделать сортировку растений по срочности
-+ подумать насчет единой функции для отрисовывания карточек растений
-+ нотификейшн - вы уже полили растение сегодня - проверить эту функцию
-+ Функцию старт переименовать на рендеринг
-+ Внутрь нее перенести иннер эйчтмл очищение
-+ добавить трай кетч - не очень понимаю, как это продумать и что писать внутри
-- убрать глобальную переменную - стоит ли? потому что где-то я испольхую массив сразу
-можно его конечно получить...
-- стоит ли создать отдельно и вынести функцию получения и записывания в локал сторадж
-потому что она повторяется несколько раз (там всего 2 строчки, но все же)
-- tailwind не загружается сразу
+# Plant Watering Tracker
 
-потом
-глобальные переменные - ok
-трай кетч
-да, стоит иметь отдельные методы работы с локал стораджем - ok
+A simple app that keeps track of when to water your houseplants. Built with vanilla JavaScript, without frameworks. This was my first project.
+
+**[Live demo](link)**
+
+## Screenshots
+
+| Desktop | Mobile |
+|:---:|:---:|
+| <img src="screenshots/main_page.png" alt="Desktop view" width="500"> | <img src="screenshots/main_mobile.png" alt="Mobile view" width="170"> |
+
+![Add plant form](screenshots/add_plant_form.png)
+
+## Features
+
+- Add a plant card: enter a name, choose an icon, the watering interval and the date of the last watering
+- See when the next watering is due
+- Press "Water now" to update the last watering date and recalculate the next one
+- Data is saved in the browser, so plants are still there after a page reload
+- Responsive layout for mobile screens
+
+## Tech stack
+
+- **HTML5**, **CSS3**
+- **JavaScript (ES6+)**: DOM manipulation, event handling, working with dates
+- **Tailwind CSS**: styling
+- **localStorage**: data persistence
