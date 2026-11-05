@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Watering plants</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="script.js" defer></script>
+    </head>
+    <body class="font-sans max-w-3xl m-auto">
+        <header class="flex justify-between p-6">
+            <h1 class="font-bold text-3xl">My plants</h1>
+            <button id="button-add-plant" class="rounded-3xl text-white text-sm/4 bg-neutral-600 hover:bg-neutral-700 px-8 py-2">Add plant</button>
+        </header>
+
+        <main class="p-6">
+            <section id="start-page" class="hidden mt-6 text-center font-bold text-2xl text-neutral-600/50">You don't have any plants yet</section>
+            <section class="hidden plant-cards-box grid sm:grid-cols-2 gap-6">
+            <!--<article class="border border-black rounded-3xl p-4 relative">
+                    <button data-delete class="absolute top-2 right-2 hover:bg-neutral-100 rounded-lg p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" 
+                            d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                        </svg>
+                    </button>
+                    <div class="mt-6">
+                        <p class="text-4xl">🪴</p>
+                        <h3 class="font-semibold text-lg/8 mt-2">Very long name of the plant</h3>
+                        <p class="text-xs text-neutral-600">water every <span>7</span> days</p>
+                        <p class="mt-6 text-sm">
+                            <span>Should have watered </span>
+                            <span class="bg-orange-500/30 rounded-3xl px-4 py-1 ml-1">2 days ago</span>
+                        </p>
+                        <button data-watering class="mt-4 rounded-3xl text-white text-sm/4 bg-emerald-500 hover:bg-emerald-600 px-8 py-2">Water now</button>
+                    </div>
+                </article> -->
+            </section>
+            <section id="form-modal-window" class="hidden fixed bg-neutral-700/90 top-0 left-0 z-100 w-full h-full flex justify-center items-center">
+                <form name="new-plant-form" class="new-plant-form border border-black rounded-3xl p-4 bg-white w-full mx-6 max-w-2xl min-w-xl">
+                    <h2 class="font-bold text-2xl">New plant</h2>
+                    <div class="grid sm:grid-cols-2 my-4 gap-4">
+                        <p>
+                            <label for="inputName">Name of the plant</label>
+                            <input type="text" name="plantName" id="inputName" 
+                                placeholder="Monstera deliciosa" maxlength="30"
+                                class="border border-black rounded-lg text-sm w-full p-2">
+                        </p>
+                        <p>
+                            <label for="selectIcon">Icon</label>
+                            <select name="plantIcon" id="selectIcon" 
+                            class="border border-black rounded-lg text-sm/5 w-full p-2 appearance-none">
+                                <option value="">Please choose an icon</option>
+                                <option value="🪴">🪴</option>
+                                <option value="🌵">🌵</option>
+                                <option value="🌴">🌴</option>
+                                <option value="🌳">🌳</option>
+                                <option value="🌱">🌱</option>
+                                <option value="🪻">🪻</option>
+                                <option value="🌿">🌿</option>
+                                <option value="🌸">🌸</option>
+                                <option value="🍋">🍋</option>
+                                <option value="🌲">🌲</option>
+                                <option value="🌾">🌾</option>
+                                <option value="🌺">🌺</option>
+                                <option value="🍀">🍀</option>
+                                <option value="🎋">🎋</option>
+                                <option value="🌷">🌷</option>
+                                <option value="🥑">🥑</option>
+                                <option value="🥬">🥬</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="inputPeriod">Watering period in days</label>
+                            <input type="number" name="waterPeriod" id="inputPeriod" 
+                                placeholder="7" min="1"
+                                class="border border-black rounded-lg text-sm w-full p-2">
+                        </p>
+                        <p>
+                            <label for="inputDate">Last watering</label>
+                            <input type="date" name="lastWaterDate" id="inputDate" min="2025-06-01"
+                            class="border border-black rounded-lg text-sm/4 w-full p-2 appearance-none">
+                        </p>
+                    </div>
+                    <div class="mt-6 mb-4 flex gap-4 justify-center sm:justify-end">
+                        <button type="button" class="buttonCancelForm w-32 rounded-3xl text-white text-sm/4 text-center bg-neutral-600 hover:bg-neutral-700 px-8 py-2">Cancel</button>
+                        <button type="submit" class="w-32 rounded-3xl text-white text-sm/4 text-center bg-neutral-600 hover:bg-neutral-700 px-8 py-2">Save</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </body>
+</html>
